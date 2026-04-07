@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# ─── Bonfyre Pages App Hook ──────────────────────────────────────────────────
+set -euo pipefail
+
+BONFYRE_BIN="${BONFYRE_BIN:-$HOME/.local/bin}"
+export PATH="$BONFYRE_BIN:$PATH"
+
+log() { printf "\033[0;33m[bonfyre]\033[0m %s\n" "$1"; }
+err() { printf "\033[0;31m[bonfyre]\033[0m %s\n" "$1" >&2; }
+
+require_bin() {
+  for b in "$@"; do
+    command -v "$b" >/dev/null 2>&1 || { err "Missing: $b (run 'make install' in bonfyre-oss)"; return 1; }
+  done
+}
+log "Validating guide completeness…"
+SRC_COUNT=$(find input/source/ -type f 2>/dev/null | wc -l | tr -d ' ')
+ART_COUNT=$(find artifacts/ -name '*.tags.json' 2>/dev/null | wc -l | tr -d ' ')
+log "Source files: $SRC_COUNT | Indexed artifacts: $ART_COUNT"
+if [ "$SRC_COUNT" -gt 0 ] && [ "$ART_COUNT" -eq 0 ]; then
+  err "Source files exist but no artifacts — run pipeline first."
+  exit 1
+fi
+log "Guide validated."
