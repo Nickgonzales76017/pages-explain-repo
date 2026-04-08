@@ -160,6 +160,7 @@
       </span>
     </div>
   </div>
+  <script src="js/github-intake.js"></script>
   <script>
     const STORE_KEY = 'bonfyre_pages-explain-repo_config';
     const ITEMS_KEY = 'bonfyre_pages-explain-repo_items';
@@ -202,7 +203,7 @@
 
     async function handleFile(file) {
       if (!config.repo) { toggleConfig(); alert('Configure the GitHub repository first.'); return; }
-      const preparedName = buildPreparedName(file.name);
+      const preparedName = BonfyreGitHubIntake.createPreparedName(file.name);
       const targetPath = INPUT_PATH + '/' + preparedName;
       const itemId = preparedName.replace(/\.[^.]*$/, '');
 
@@ -220,17 +221,17 @@
       };
 
       try {
-        const preparedDownload = buildPreparedDownload(file, preparedName);
+        const preparedDownload = BonfyreGitHubIntake.createPreparedDownload(file, preparedName);
         updateStep('prepare', 'done');
         updateStep('commit', 'active');
         showIntakePreview(activeIntake, preparedDownload);
 
         const item = { id: itemId, file: preparedName, time: new Date().toLocaleString(), status: 'awaiting-upload', brief: null, tags: [], flagged: false, targetPath };
-        items = [item, ...items.filter(existing => existing.id !== itemId)];
+        items = BonfyreGitHubIntake.upsertItem(items, item);
         localStorage.setItem(ITEMS_KEY, JSON.stringify(items));
         renderBoard();
 
-        if (file.type.startsWith('text/') || /\.(c|h|py|js|ts|go|rs|md|txt)$/i.test(file.name)) {
+        if (BonfyreGitHubIntake.isTextLikeFile(file)) {
           const text = await file.text();
           runBriefWasm(text, itemId);
         } else {
@@ -240,25 +241,19 @@
     }
 
     async function githubGetFile(path) {
-      const url = 'https://raw.githubusercontent.com/' + config.repo + '/' + config.branch + '/' + path;
-      const resp = await fetch(url, { cache: 'no-store' });
-      if (!resp.ok) return null;
-      return resp.text();
-    }
-
-    function buildPreparedName(name) {
-      const safe = name.replace(/[^a-zA-Z0-9._-]/g, '_');
-      const ts = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-      return ts + '_' + safe;
-    }
-
-    function buildPreparedDownload(file, preparedName) {
-      const href = URL.createObjectURL(file);
-      return { href, download: preparedName };
+      return BonfyreGitHubIntake.fetchRawFile({
+        repo: config.repo,
+        branch: config.branch,
+        path: path
+      });
     }
 
     function buildUploadFolderUrl() {
-      return 'https://github.com/' + config.repo + '/tree/' + config.branch + '/' + INPUT_PATH;
+      return BonfyreGitHubIntake.buildUploadFolderUrl({
+        repo: config.repo,
+        branch: config.branch,
+        inputPath: INPUT_PATH
+      });
     }
 
     function showIntakePreview(intake, preparedDownload) {
@@ -268,15 +263,11 @@
       const uploadLink = document.getElementById('openUploadFolder');
 
       panel.style.display = 'block';
-      content.textContent =
-        'Prepared file: ' + intake.file + '\n' +
-        'Repo path: ' + intake.targetPath + '\n\n' +
-        'Safer launch path:\n' +
-        '1. Download the intake-ready copy from this panel.\n' +
-        '2. Open the GitHub input folder.\n' +
-        '3. Use GitHub\'s own "Add file" -> "Upload files" flow.\n' +
-        '4. Commit to ' + config.branch + ' to trigger Bonfyre Actions.\n\n' +
-        'This keeps write auth inside GitHub instead of storing a PAT in the browser.';
+      content.textContent = BonfyreGitHubIntake.buildIntakeMessage({
+        preparedName: intake.file,
+        targetPath: intake.targetPath,
+        branch: config.branch
+      });
 
       downloadLink.href = preparedDownload.href;
       downloadLink.download = preparedDownload.download;
@@ -337,7 +328,7 @@
               updateStep('render', 'done');
               updateStep('emit', 'done');
               const idx = items.findIndex(h => h.id === itemId);
-              if (idx >= 0) { items[idx].status = 'complete'; if (brief) { try { const parsed = JSON.parse(brief); items[idx].brief = parsed.summary || parsed.brief || brief; } catch (_) { items[idx].brief = brief; } } }
+              if (idx >= 0) { items[idx].status = 'complete'; if (brief) { items[idx].brief = BonfyreGitHubIntake.parseBriefPayload(brief); } }
               localStorage.setItem(ITEMS_KEY, JSON.stringify(items));
               renderBoard();
               document.getElementById('lastUpdate').textContent = 'Last update: ' + new Date().toLocaleTimeString();
