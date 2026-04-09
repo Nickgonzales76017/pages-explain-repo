@@ -1,7 +1,7 @@
 {
   "id": "demo-explain-repo",
   "file": "bonfyre-runtime-overview.md",
-  "time": "Demo dataset",
+  "time": "Reference corpus",
   "status": "complete",
   "brief": "Bonfyre runs as a layered pipeline: browser intake launches a GitHub-native workflow, Actions execute small C11 binaries, and Pages renders the final artifact views. The repo is organized around composable operators instead of one monolith, so teams can adopt intake, briefing, embedding, and publishing separately.",
   "tags": ["architecture", "pipeline", "operators"],
