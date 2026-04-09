@@ -1,0 +1,56 @@
+[
+  {
+    "id": "demo-explain-repo-a",
+    "file": "bonfyre-runtime-overview.md",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Bonfyre runs as a layered pipeline: browser intake launches a GitHub-native workflow, Actions execute small C11 binaries, and Pages renders the final artifact views. The repo is organized around composable operators instead of one monolith, so teams can adopt intake, briefing, embedding, and publishing separately.",
+    "tags": [
+      "architecture",
+      "pipeline",
+      "operators"
+    ],
+    "flagged": true,
+    "demo": true,
+    "searchSummary": "repo map, architecture, onboarding docs",
+    "whyItMatters": "One walkthrough becomes searchable product knowledge.",
+    "searchIntro": "One walkthrough becomes searchable product knowledge. Search across the seeded records to feel that inside the app.",
+    "searchOutputs": []
+  },
+  {
+    "id": "demo-explain-repo-b",
+    "file": "Related bonfyre-runtime-overview.md",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "A second seeded record extends the same workflow so in-app search and reuse are visible instead of theoretical.",
+    "tags": [
+      "architecture",
+      "pipeline",
+      "related"
+    ],
+    "flagged": false,
+    "demo": true,
+    "searchSummary": "related signals, continuity, reuse",
+    "whyItMatters": "One walkthrough becomes searchable product knowledge.",
+    "searchIntro": "One walkthrough becomes searchable product knowledge. Search across the seeded records to feel that inside the app.",
+    "searchOutputs": []
+  },
+  {
+    "id": "demo-explain-repo-c",
+    "file": "Follow-up bonfyre-runtime-overview.md",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "A third seeded record shows how this app can connect follow-up work, recurring themes, and downstream use without leaving the demo experience.",
+    "tags": [
+      "architecture",
+      "pipeline",
+      "follow-up"
+    ],
+    "flagged": false,
+    "demo": true,
+    "searchSummary": "follow-up, memory, downstream action",
+    "whyItMatters": "One walkthrough becomes searchable product knowledge.",
+    "searchIntro": "One walkthrough becomes searchable product knowledge. Search across the seeded records to feel that inside the app.",
+    "searchOutputs": []
+  }
+]
