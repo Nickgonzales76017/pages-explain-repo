@@ -1,56 +1,110 @@
 [
   {
-    "id": "demo-explain-repo-a",
-    "file": "bonfyre-runtime-overview.md",
-    "time": "Reference corpus",
+    "id": "controller-service-repository",
+    "file": "Controller-Service-Repository: Simplifying Java Spring Boot",
+    "time": "Public origin \u00b7 480s",
     "status": "complete",
-    "brief": "Bonfyre runs as a layered pipeline: browser intake launches a GitHub-native workflow, Actions execute small C11 binaries, and Pages renders the final artifact views. The repo is organized around composable operators instead of one monolith, so teams can adopt intake, briefing, embedding, and publishing separately.",
+    "brief": "This is a construction injection, and one thing to note, a sort and a comment  once is that I have this auto wired on the constructor, with the new of, which actually in the new version of spring boot is unnecessary. This makes the process a bit similar, and we actually allows spring boot handle some functionality. The note, we would have our user dto, as we have actually returning, because our user  entity is matching the exact state of the database, which then might also this kind of optional. In this example, we have a very simple user class, having some auto-generated ID, a name, a last name, and an  H.",
     "tags": [
       "architecture",
-      "pipeline",
-      "operators"
+      "code",
+      "repository",
+      "walkthrough",
+      "pattern"
     ],
     "flagged": true,
     "demo": true,
-    "searchSummary": "repo map, architecture, onboarding docs",
-    "whyItMatters": "One walkthrough becomes searchable product knowledge.",
-    "searchIntro": "One walkthrough becomes searchable product knowledge. Search across the reference records to feel that inside the app.",
-    "searchOutputs": []
+    "sourceUrl": "https://www.youtube.com/watch?v=D44si7o4ndg",
+    "sourceLabel": "Watch original public video",
+    "sourceTitle": "Controller-Service-Repository: Simplifying Java Spring Boot",
+    "publisher": "Random code",
+    "license": "Public YouTube video processed transiently. Bonfyre retained only derived artifacts.",
+    "sourceCopy": "Source: Random code on YouTube. Bonfyre downloaded, transcribed, and deleted the media. Only the transcript, brief, and proof remain.",
+    "whyItMatters": "Code walkthroughs become structured architecture docs \u2014 new team members onboard faster from real explanations.",
+    "searchSummary": "architecture, code, repository",
+    "searchIntro": "Search across the explain repo records to see how Bonfyre connects related content from different sources.",
+    "outputs": [
+      "architecture brief",
+      "clean transcript",
+      "proof bundle",
+      "search across repos"
+    ],
+    "outputNotes": {
+      "architecture brief": "Bonfyre extracted the key points from the source audio into a structured architecture brief.",
+      "clean transcript": "The raw transcript cleaned of filler words, false starts, and artifacts.",
+      "proof bundle": "Full provenance chain: source URL, transcription confidence, processing recipe, and quality flags."
+    },
+    "outputLinks": {
+      "brief": {
+        "href": "demos/explain-repo/proofs/controller-service-repository/brief.md",
+        "label": "Open brief"
+      },
+      "clean transcript": {
+        "href": "demos/explain-repo/proofs/controller-service-repository/clean.txt",
+        "label": "Open clean transcript"
+      },
+      "proof bundle": {
+        "href": "demos/explain-repo/proofs/controller-service-repository/proof.json",
+        "label": "Open proof JSON"
+      }
+    },
+    "searchOutputs": [
+      "search across records"
+    ],
+    "proofPath": "demos/explain-repo/proofs/controller-service-repository"
   },
   {
-    "id": "demo-explain-repo-b",
-    "file": "Related bonfyre-runtime-overview.md",
-    "time": "Reference corpus",
+    "id": "repository-pattern-explained",
+    "file": "The Repository Pattern explained for EVERYONE (with Code Examples) \ud83d\ude80",
+    "time": "Public origin \u00b7 794s",
     "status": "complete",
-    "brief": "A second reference record extends the same workflow so in-app search and reuse are visible instead of theoretical.",
+    "brief": "Repositories also support the purpose of separating, clearly, in one direction, the dependency between the work domain and the data allocation or mapping. The repository is or repositories are classes or components that encapsulate the logic required to access data sources, all right? They centralize common data access functionality, providing better maintainability and decoupling the infrastructure or technology used to access databases from the domain model layer. I usually call this stuff service, it is a web service, in essence, so that's what I do, and now the really nice thing is that we have no so-called fat controller anymore, the controller has not a lot of logic here, it's just for what the request from the client to the actual repository, and then returns the actual data.",
     "tags": [
       "architecture",
-      "pipeline",
-      "related"
+      "code",
+      "repository",
+      "walkthrough",
+      "pattern"
     ],
     "flagged": false,
     "demo": true,
-    "searchSummary": "related signals, continuity, reuse",
-    "whyItMatters": "One walkthrough becomes searchable product knowledge.",
-    "searchIntro": "One walkthrough becomes searchable product knowledge. Search across the reference records to feel that inside the app.",
-    "searchOutputs": []
-  },
-  {
-    "id": "demo-explain-repo-c",
-    "file": "Follow-up bonfyre-runtime-overview.md",
-    "time": "Reference corpus",
-    "status": "complete",
-    "brief": "A third reference record shows how this app can connect follow-up work, recurring themes, and downstream use without leaving the demo experience.",
-    "tags": [
-      "architecture",
-      "pipeline",
-      "follow-up"
+    "sourceUrl": "https://www.youtube.com/watch?v=Wiy54682d1w",
+    "sourceLabel": "Watch original public video",
+    "sourceTitle": "The Repository Pattern explained for EVERYONE (with Code Examples) \ud83d\ude80",
+    "publisher": "Patrick God",
+    "license": "Public YouTube video processed transiently. Bonfyre retained only derived artifacts.",
+    "sourceCopy": "Source: Patrick God on YouTube. Bonfyre downloaded, transcribed, and deleted the media. Only the transcript, brief, and proof remain.",
+    "whyItMatters": "Code walkthroughs become structured architecture docs \u2014 new team members onboard faster from real explanations.",
+    "searchSummary": "architecture, code, repository",
+    "searchIntro": "Search across the explain repo records to see how Bonfyre connects related content from different sources.",
+    "outputs": [
+      "architecture brief",
+      "clean transcript",
+      "proof bundle",
+      "search across repos"
     ],
-    "flagged": false,
-    "demo": true,
-    "searchSummary": "follow-up, memory, downstream action",
-    "whyItMatters": "One walkthrough becomes searchable product knowledge.",
-    "searchIntro": "One walkthrough becomes searchable product knowledge. Search across the reference records to feel that inside the app.",
-    "searchOutputs": []
+    "outputNotes": {
+      "architecture brief": "Bonfyre extracted the key points from the source audio into a structured architecture brief.",
+      "clean transcript": "The raw transcript cleaned of filler words, false starts, and artifacts.",
+      "proof bundle": "Full provenance chain: source URL, transcription confidence, processing recipe, and quality flags."
+    },
+    "outputLinks": {
+      "brief": {
+        "href": "demos/explain-repo/proofs/repository-pattern-explained/brief.md",
+        "label": "Open brief"
+      },
+      "clean transcript": {
+        "href": "demos/explain-repo/proofs/repository-pattern-explained/clean.txt",
+        "label": "Open clean transcript"
+      },
+      "proof bundle": {
+        "href": "demos/explain-repo/proofs/repository-pattern-explained/proof.json",
+        "label": "Open proof JSON"
+      }
+    },
+    "searchOutputs": [
+      "search across records"
+    ],
+    "proofPath": "demos/explain-repo/proofs/repository-pattern-explained"
   }
 ]

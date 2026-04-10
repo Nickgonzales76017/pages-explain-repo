@@ -1,0 +1,16 @@
+{
+  "title": "explain-this-repo \u2014 QUuXUrpZvJU",
+  "public_url": "https://www.youtube.com/watch?v=QUuXUrpZvJU",
+  "source": {
+    "title": "Free AI tool Gemini (Nano Banana) for Architecture Conceptual Design \u2014 Full Workflow Tutorial",
+    "channel": "LandSpace Architecture",
+    "duration_seconds": 363
+  },
+  "transcribe": {
+    "avg_confidence": 0.9444,
+    "rtf": 0.04,
+    "segments_total": 72,
+    "segments_hallucinated": 25
+  },
+  "retained_media": false
+}

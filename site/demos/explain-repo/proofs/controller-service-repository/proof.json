@@ -1,0 +1,17 @@
+{
+  "title": "Controller-Service-Repository: Simplifying Java Spring Boot",
+  "public_url": "https://www.youtube.com/watch?v=D44si7o4ndg",
+  "source": {
+    "title": "Controller-Service-Repository: Simplifying Java Spring Boot",
+    "channel": "Random code",
+    "duration_seconds": 480
+  },
+  "transcribe": {
+    "avg_confidence": 0.7743,
+    "avg_logprob": -0.5,
+    "rtf": 0.0364,
+    "segments_total": 51,
+    "segments_hallucinated": 0
+  },
+  "retained_media": false
+}

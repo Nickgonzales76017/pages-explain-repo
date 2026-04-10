@@ -1,0 +1,16 @@
+{
+  "title": "explain-this-repo \u2014 I_HUpijfGtg",
+  "public_url": "https://www.youtube.com/watch?v=I_HUpijfGtg",
+  "source": {
+    "title": "How to Use GitHub (Even If You're Not a Coder) \u2013 Full Beginner Tutorial",
+    "channel": "AIPURE",
+    "duration_seconds": 268
+  },
+  "transcribe": {
+    "avg_confidence": 0.9329,
+    "rtf": 0.04,
+    "segments_total": 103,
+    "segments_hallucinated": 50
+  },
+  "retained_media": false
+}

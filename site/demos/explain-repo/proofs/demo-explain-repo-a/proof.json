@@ -1,0 +1,16 @@
+{
+  "title": "explain-this-repo \u2014 6jqy-Dizd0I",
+  "public_url": "https://www.youtube.com/watch?v=6jqy-Dizd0I",
+  "source": {
+    "title": "Should you rewrite in Rust?",
+    "channel": "LinuxConfAu 2018 - Sydney, Australia",
+    "duration_seconds": 2714
+  },
+  "transcribe": {
+    "avg_confidence": 0.9346,
+    "rtf": 0.04,
+    "segments_total": 965,
+    "segments_hallucinated": 298
+  },
+  "retained_media": false
+}
